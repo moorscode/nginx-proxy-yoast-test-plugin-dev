@@ -1,0 +1,18 @@
+version: '3'
+services:
+  proxy:
+    build: ./
+    networks:
+      - yoastcom_dev
+#      - myyoast_dev
+      - plugin_dev
+    ports:
+      - 80:80
+
+networks:
+  yoastcom_dev:
+    name: yoastcom_wpdevnet
+#  myyoast_dev:
+#    name: my-yoast_wpdevnet
+  plugin_dev:
+    name: plugin-development-docker_default
